@@ -1,0 +1,305 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    font-family: "Roboto",system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+}
+
+
+.container {
+    display: grid;
+}
+
+/*HEADER*/
+
+
+.navbar {
+    grid-area: nav;
+    width: 100%;
+    background-color: #519ce7;
+    color: white;
+    display: flex;
+    padding: 10px 20px;
+    /*justify-content: space-between;*/
+    align-items: center;
+
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+
+}
+
+
+.nav img.logo {
+    width: 40x;
+    height: 40px;
+    margin-top: 10px;
+
+}
+
+
+.nav i{
+    margin-right: 20px;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    display: flex;
+
+}
+
+.aside{
+    display: none;
+}
+
+.aside ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+}
+
+li{
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*FILTRO*/
+
+nav{
+    grid-area: filtros;
+
+}
+.filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #E5E5E5;
+    font-size: 20px;
+
+}
+
+.filters p {
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.price {
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid rgb(199, 198, 198);
+    background-color: white;
+    width: 90%;
+    font-size: 20px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.angle-down{
+    margin-right: 10px;
+    justify-content: flex-end ;
+
+}
+
+.price-left{
+    font-size: 1.2em;
+    margin: 0;
+}
+
+/*MAIN*/
+
+main{
+    grid-area: principal;
+}
+.card-products{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFF;
+    border: none;
+    text-align: center;
+    border: 0.5px solid #e4e3e3;;
+    margin: 10px;
+
+
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.description-card{
+    font-size: 20px;
+    color: black;
+
+}
+
+.btn {
+    margin-top: 5px;
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: #4591dd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 25px;
+
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    border: 0.5px solid #e4e3e3;
+    background-color: white;
+    cursor: pointer;
+    color: #4591dd;
+}
+
+
+/*FOOTER*/
+.footer {
+    grid-area: pie;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: darkblue;
+    color: white;
+
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/*PANTALLA MOBILE*/
+
+@media (max-width:576px) {
+    .container {
+        grid-template-areas:
+            "nav"
+            "filtros"
+            "principal"
+            "pie";
+        grid-template-columns: auto;
+        width: 100%;
+
+    }
+    .nav i{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .filters{
+        width: 100%;
+        padding: 5px 20px;
+    }
+
+    .products{
+        margin-left: 20px;
+        display: inline-block;
+    }
+
+    .card-products{
+        padding: 1em 3px 5px 3px;
+
+    }
+}
+
+/*PANTALLA ESCRITORIO*/
+
+@media (min-width: 576px) {
+    .container {
+        grid-template-areas:
+            "nav filtros"
+            "nav principal"
+            "pie principal";
+        grid-template-columns: 10% 3fr;
+    }
+
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        line-height: 40px;
+    }
+
+    .nav i{
+        display: none;
+    }
+
+    .aside{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 40px;
+    }
+
+
+    .filters{
+        padding: 5px;
+        
+    }
+
+    .products{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 20px;
+    }
+
+
+
+
+    .footer {
+        grid-area: pie;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        background-color: rgb(199, 198, 198);
+        color: darkblue;
+
+    }
+
+}
+
+
+
+
